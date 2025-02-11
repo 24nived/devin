@@ -1,6 +1,6 @@
 import { Button, Container } from "@chakra-ui/react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import {UserPage} from "./pages/UserPage";
+import UserPage from "./pages/UserPage";
 import PostPage from "./pages/PostPage";
 import { Header } from "./components/Header";
 import HomePage from "./pages/HomePage";
@@ -9,6 +9,7 @@ import { useRecoilValue } from "recoil";
 import  userAtom  from "./atoms/userAtom";
 import LogoutButton from "./components/LogoutButton";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
+import CreatePost from "./components/CreatePost";
 
 function App() {
   const user = useRecoilValue(userAtom);
@@ -24,6 +25,7 @@ function App() {
 </Routes>
 
 {user && <LogoutButton />}
+{user && <CreatePost />}
 
   </Container>
     
